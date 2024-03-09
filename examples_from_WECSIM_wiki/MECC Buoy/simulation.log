@@ -1,0 +1,49 @@
+
+WEC-Sim Input From Standard wecSimInputFile.m Of Case Directory... 
+WEC-Sim: An open-source code for simulating wave energy converters
+Version: 6.0
+
+Initializing the Simulation Class...
+	Case Dir: C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy 
+Elapsed time is 0.610004 seconds.
+
+WEC-Sim Pre-processing ...   
+	Infinite water depth specified in BEM and "waves.waterDepth" not specified in input file.
+Set water depth to 200m for visualization.
+Elapsed time is 1.220890 seconds.
+
+WEC-Sim Simulation Settings:
+	Start Time                     (sec) = 0
+	End Time                       (sec) = 100
+	Time Step Size                 (sec) = 0.01
+	Ramp Function Time             (sec) = 10
+	Convolution Integral Interval  (sec) = 1
+	 Number of Time Steps     = 10000 
+
+Wave Environment: 
+	Wave Type                            = Irregular Waves (Arbitrary Random Phase)
+	Spectrum Type                        = Pierson-Moskowitz  
+	Significant Wave Height, Hs      (m) = 2.5
+	Peak Wave Period, Tp           (sec) = 8
+
+List of Body: Number of Bodies = 1 
+
+	***** Body Number 1, Name: buoyhull *****
+	Body CG                          (m) = [0,0,0]
+	Body Mass                       (kg) = 122.7 
+	Body Moments of Inertia       (kgm2) = [25.96,25.96,36.96]
+	Body Products of Inertia      (kgm2) = [0,0,0]
+
+List of PTO(s): No PTO in the system
+
+List of Constraint(s): Number of Constraints = 1 
+
+	***** Constraint Name: Constraint1 *****
+
+
+Simulating the WEC device defined in the SimMechanics model C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy\MECC_Buoy.slx...   
+Elapsed time is 0.327977 seconds.
+Elapsed time is 11.070286 seconds.
+
+Post-processing and saving...   
+Elapsed time is 1.081721 seconds.
