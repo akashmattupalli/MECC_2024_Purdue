@@ -1,0 +1,235 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>wecSimInputFile</title><meta name="generator" content="MATLAB 9.10"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2024-03-07"><meta name="DC.source" content="wecSimInputFile.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Simulation Data</a></li><li><a href="#2">Wave Information</a></li><li><a href="#3">Body Data</a></li><li><a href="#4">PTO and Constraint Parameters</a></li></ul></div><h2 id="1">Simulation Data</h2><pre class="codeinput">simu = simulationClass();               <span class="comment">% Initialize Simulation Class</span>
+simu.simMechanicsFile = <span class="string">'MECC_Buoy.slx'</span>;      <span class="comment">% Specify Simulink Model File</span>
+simu.mode = <span class="string">'normal'</span>;                   <span class="comment">% Specify Simulation Mode ('normal','accelerator','rapid-accelerator')</span>
+simu.explorer = <span class="string">'on'</span>;                   <span class="comment">% Turn SimMechanics Explorer (on/off)</span>
+simu.startTime = 0;                     <span class="comment">% Simulation Start Time [s]</span>
+simu.rampTime = 10;                    <span class="comment">% Wave Ramp Time [s]</span>
+simu.endTime = 100;                   <span class="comment">% Simulation End Time [s]</span>
+simu.solver = <span class="string">'ode4'</span>;                   <span class="comment">% simu.solver = 'ode4' for fixed step &amp; simu.solver = 'ode45' for variable step</span>
+simu.dt = 0.01; 							<span class="comment">% Simulation time-step [s]</span>
+simu.cicEndTime = 1;
+simu.rho = 1025;
+</pre><pre class="codeoutput">WEC-Sim: An open-source code for simulating wave energy converters
+Version: 6.0
+
+Initializing the Simulation Class...
+	Case Dir: C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy 
+</pre><h2 id="2">Wave Information</h2><p>% noWaveCIC, no waves with radiation CIC waves = waveClass('noWaveCIC');       % Initialize Wave Class and Specify Type</p><pre class="codeinput"><span class="comment">% % Regular Waves</span>
+<span class="comment">%waves = waveClass('regular');           % Initialize Wave Class and Specify Type</span>
+<span class="comment">%waves.height = 2;                     % Wave Height [m]</span>
+<span class="comment">%waves.period = 8;                       % Wave Period [s]</span>
+
+<span class="comment">% % Regular Waves with CIC</span>
+<span class="comment">% waves = waveClass('regularCIC');          % Initialize Wave Class and Specify Type</span>
+<span class="comment">% waves.height = 2.5;                       % Wave Height [m]</span>
+<span class="comment">% waves.period = 8;                         % Wave Period [s]</span>
+
+<span class="comment">% % Irregular Waves using PM Spectrum</span>
+  waves = waveClass(<span class="string">'irregular'</span>);           <span class="comment">% Initialize Wave Class and Specify Type</span>
+  waves.height = 2.5;                       <span class="comment">% Significant Wave Height [m]</span>
+  waves.period = 8;                         <span class="comment">% Peak Period [s]</span>
+  waves.spectrumType = <span class="string">'PM'</span>;                <span class="comment">% Specify Wave Spectrum Type</span>
+  waves.direction=[0];
+
+<span class="comment">% % Irregular Waves using JS Spectrum with Equal Energy and Seeded Phase</span>
+ <span class="comment">%waves = waveClass('irregular');           % Initialize Wave Class and Specify Type</span>
+ <span class="comment">%waves.height = 2;                       % Significant Wave Height [m]look at documentation, wave class</span>
+ <span class="comment">%waves.period = 8;                         % Peak Period [s]</span>
+ <span class="comment">%waves.spectrumType = 'JS';                % Specify Wave Spectrum Type</span>
+ <span class="comment">%waves.bem.option = 'EqualEnergy';         % Uses 'EqualEnergy' bins (default)</span>
+ <span class="comment">%waves.phaseSeed = 1;                      % Phase is seeded so eta is the same</span>
+
+<span class="comment">% % Irregular Waves using PM Spectrum with Traditional and State Space</span>
+<span class="comment">% waves = waveClass('irregular');           % Initialize Wave Class and Specify Type</span>
+<span class="comment">% waves.height = 2.5;                       % Significant Wave Height [m]</span>
+<span class="comment">% waves.period = 8;                         % Peak Period [s]</span>
+<span class="comment">% waves.spectrumType = 'PM';                % Specify Wave Spectrum Type</span>
+<span class="comment">% simu.stateSpace = 1;                      % Turn on State Space</span>
+<span class="comment">% waves.bem.option = 'Traditional';         % Uses 1000 frequnecies</span>
+
+<span class="comment">% % Irregular Waves with imported spectrum</span>
+<span class="comment">% waves = waveClass('spectrumImport');      % Create the Wave Variable and Specify Type</span>
+<span class="comment">% waves.spectrumFile = 'spectrumData.mat';  % Name of User-Defined Spectrum File [:,2] = [f, Sf]</span>
+
+<span class="comment">% % Waves with imported wave elevation time-history</span>
+ <span class="comment">%waves = waveClass('elevationImport');          % Create the Wave Variable and Specify Type</span>
+ <span class="comment">%waves.elevationFile = 'elevationData.mat';     % Name of User-Defined Time-Series File [:,2] = [time, eta]</span>
+</pre><h2 id="3">Body Data</h2><p>Float</p><pre class="codeinput">body(1) = bodyClass(<span class="string">'hydroData/buoyhull.h5'</span>);
+    <span class="comment">% Create the body(1) Variable, Set Location of Hydrodynamic Data File</span>
+    <span class="comment">% and Body Number Within this File.</span>
+body(1).geometryFile = <span class="string">'geometry/buoy.stl'</span>;    <span class="comment">% Location of Geomtry File</span>
+body(1).mass = 122.7;
+    <span class="comment">% Body Mass. The 'equilibrium' Option Sets it to the Displaced Water</span>
+    <span class="comment">% Weight.</span>
+body(1).inertia = [25.96 25.96 36.96];  <span class="comment">% Moment of Inertia [kg*m^2]</span>
+<span class="comment">% Spar/Plate</span>
+<span class="comment">%body(2) = bodyClass('hydroData/rm3.h5');</span>
+<span class="comment">%body(2).geometryFile = 'geometry/plate.stl';</span>
+<span class="comment">%body(2).mass = 'equilibrium';</span>
+<span class="comment">%body(2).inertia = [94419614.57 94407091.24 28542224.82];</span>
+</pre><h2 id="4">PTO and Constraint Parameters</h2><p>Floating (3DOF) Joint</p><pre class="codeinput">constraint(1) = constraintClass(<span class="string">'Constraint1'</span>); <span class="comment">% Initialize Constraint Class for Constraint1</span>
+constraint(1).location = [0 0 0]; <span class="comment">% Constraint Location [m]</span>
+
+<span class="comment">% Translational PTO</span>
+<span class="comment">%pto(1) = ptoClass('PTO1');                      % Initialize PTO Class for PTO1</span>
+<span class="comment">%pto(1).stiffness = 0;                           % PTO Stiffness [N/m]</span>
+<span class="comment">%pto(1).damping = 1200000;                       % PTO Damping [N/(m/s)]</span>
+<span class="comment">%pto(1).location = [0 0 0];                      % PTO Location [m]</span>
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Simulation Data
+simu = simulationClass();               % Initialize Simulation Class
+simu.simMechanicsFile = 'MECC_Buoy.slx';      % Specify Simulink Model File
+simu.mode = 'normal';                   % Specify Simulation Mode ('normal','accelerator','rapid-accelerator')
+simu.explorer = 'on';                   % Turn SimMechanics Explorer (on/off)
+simu.startTime = 0;                     % Simulation Start Time [s]
+simu.rampTime = 10;                    % Wave Ramp Time [s]
+simu.endTime = 100;                   % Simulation End Time [s]
+simu.solver = 'ode4';                   % simu.solver = 'ode4' for fixed step & simu.solver = 'ode45' for variable step 
+simu.dt = 0.01; 							% Simulation time-step [s]
+simu.cicEndTime = 1;
+simu.rho = 1025;
+
+%% Wave Information 
+% % noWaveCIC, no waves with radiation CIC  
+% waves = waveClass('noWaveCIC');       % Initialize Wave Class and Specify Type  
+
+% % Regular Waves  
+%waves = waveClass('regular');           % Initialize Wave Class and Specify Type                                 
+%waves.height = 2;                     % Wave Height [m]
+%waves.period = 8;                       % Wave Period [s]
+
+% % Regular Waves with CIC
+% waves = waveClass('regularCIC');          % Initialize Wave Class and Specify Type                                 
+% waves.height = 2.5;                       % Wave Height [m]
+% waves.period = 8;                         % Wave Period [s]
+
+% % Irregular Waves using PM Spectrum 
+  waves = waveClass('irregular');           % Initialize Wave Class and Specify Type
+  waves.height = 2.5;                       % Significant Wave Height [m]
+  waves.period = 8;                         % Peak Period [s]
+  waves.spectrumType = 'PM';                % Specify Wave Spectrum Type
+  waves.direction=[0];
+
+% % Irregular Waves using JS Spectrum with Equal Energy and Seeded Phase
+ %waves = waveClass('irregular');           % Initialize Wave Class and Specify Type
+ %waves.height = 2;                       % Significant Wave Height [m]look at documentation, wave class 
+ %waves.period = 8;                         % Peak Period [s]
+ %waves.spectrumType = 'JS';                % Specify Wave Spectrum Type
+ %waves.bem.option = 'EqualEnergy';         % Uses 'EqualEnergy' bins (default) 
+ %waves.phaseSeed = 1;                      % Phase is seeded so eta is the same
+
+% % Irregular Waves using PM Spectrum with Traditional and State Space 
+% waves = waveClass('irregular');           % Initialize Wave Class and Specify Type
+% waves.height = 2.5;                       % Significant Wave Height [m]
+% waves.period = 8;                         % Peak Period [s]
+% waves.spectrumType = 'PM';                % Specify Wave Spectrum Type
+% simu.stateSpace = 1;                      % Turn on State Space
+% waves.bem.option = 'Traditional';         % Uses 1000 frequnecies
+
+% % Irregular Waves with imported spectrum
+% waves = waveClass('spectrumImport');      % Create the Wave Variable and Specify Type
+% waves.spectrumFile = 'spectrumData.mat';  % Name of User-Defined Spectrum File [:,2] = [f, Sf]
+
+% % Waves with imported wave elevation time-history  
+ %waves = waveClass('elevationImport');          % Create the Wave Variable and Specify Type
+ %waves.elevationFile = 'elevationData.mat';     % Name of User-Defined Time-Series File [:,2] = [time, eta]
+
+%% Body Data
+% Float
+body(1) = bodyClass('hydroData/buoyhull.h5');      
+    % Create the body(1) Variable, Set Location of Hydrodynamic Data File 
+    % and Body Number Within this File.   
+body(1).geometryFile = 'geometry/buoy.stl';    % Location of Geomtry File   
+body(1).mass = 122.7;
+    % Body Mass. The 'equilibrium' Option Sets it to the Displaced Water 
+    % Weight.
+body(1).inertia = [25.96 25.96 36.96];  % Moment of Inertia [kg*m^2]     
+% Spar/Plate
+%body(2) = bodyClass('hydroData/rm3.h5'); 
+%body(2).geometryFile = 'geometry/plate.stl'; 
+%body(2).mass = 'equilibrium';                   
+%body(2).inertia = [94419614.57 94407091.24 28542224.82];
+
+%% PTO and Constraint Parameters
+% Floating (3DOF) Joint
+constraint(1) = constraintClass('Constraint1'); % Initialize Constraint Class for Constraint1
+constraint(1).location = [0 0 0]; % Constraint Location [m]
+
+% Translational PTO
+%pto(1) = ptoClass('PTO1');                      % Initialize PTO Class for PTO1
+%pto(1).stiffness = 0;                           % PTO Stiffness [N/m]
+%pto(1).damping = 1200000;                       % PTO Damping [N/(m/s)]
+%pto(1).location = [0 0 0];                      % PTO Location [m]
+
+##### SOURCE END #####
+--></body></html>

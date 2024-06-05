@@ -1,0 +1,56 @@
+
+WEC-Sim Input From Standard wecSimInputFile.m Of Case Directory... 
+WEC-Sim: An open-source code for simulating wave energy converters
+Version: 6.0
+
+Initializing the Simulation Class...
+	Case Dir: C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy with MoorDyn\mooring 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('simulationClass/checkInputs', 'C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\objects\simulationClass.m', 128)" style="font-weight:bold">simulationClass/checkInputs</a> (<a href="matlab: opentoline('C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\objects\simulationClass.m',128,0)">line 128</a>)
+The simMechanics file, C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy with
+MoorDyn\mooring\RM3MoorDyn.slx, does not exist in the case directory
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('initializeWecSim', 'C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\functions\initializeWecSim.m', 108)" style="font-weight:bold">initializeWecSim</a> (<a href="matlab: opentoline('C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\functions\initializeWecSim.m',108,0)">line 108</a>)
+simu.checkInputs();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\lang\run.m', 91)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\lang\run.m',91,0)">line 91</a>)
+evalin('caller', strcat(script, ';'));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\wecSim.m', 43)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\wecSim.m',43,0)">line 43</a>)
+run('initializeWecSim');
+} 
+clear
+clc
+wecSim
+WEC-Sim: An open-source code for simulating wave energy converters
+Version: 6.0
+
+Initializing the Simulation Class...
+	Case Dir: C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy with MoorDyn 
+
+WEC-Sim Input From Standard wecSimInputFile.m Of Case Directory... 
+WEC-Sim: An open-source code for simulating wave energy converters
+Version: 6.0
+
+Initializing the Simulation Class...
+	Case Dir: C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy with MoorDyn\mooring 
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('simulationClass/checkInputs', 'C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\objects\simulationClass.m', 128)" style="font-weight:bold">simulationClass/checkInputs</a> (<a href="matlab: opentoline('C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\objects\simulationClass.m',128,0)">line 128</a>)
+The simMechanics file, C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy with
+MoorDyn\mooring\RM3MoorDyn.slx, does not exist in the case directory
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('initializeWecSim', 'C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\functions\initializeWecSim.m', 108)" style="font-weight:bold">initializeWecSim</a> (<a href="matlab: opentoline('C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\functions\initializeWecSim.m',108,0)">line 108</a>)
+simu.checkInputs();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run', 'C:\Program Files\MATLAB\R2021a\toolbox\matlab\lang\run.m', 91)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2021a\toolbox\matlab\lang\run.m',91,0)">line 91</a>)
+evalin('caller', strcat(script, ';'));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\wecSim.m', 43)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\source\wecSim.m',43,0)">line 43</a>)
+run('initializeWecSim');
+} 
+clear
+clc
+wecSim
+WEC-Sim: An open-source code for simulating wave energy converters
+Version: 6.0
+
+Initializing the Simulation Class...
+	Case Dir: C:\Users\akash\OneDrive\Documents\GitHub\WEC-Sim\examples\MECC Buoy with MoorDyn 

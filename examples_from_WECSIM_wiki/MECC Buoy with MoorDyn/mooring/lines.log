@@ -1,0 +1,3 @@
+MoorDyn v2 log file with output level MSG at 'Mooring/lines.log'
+ERR ../../source/MoorDyn2.cpp:2011 checkNumberOfEntriesInLine(): Error in Mooring/lines.txt:
+10 fields are required, but just 9 are provided
